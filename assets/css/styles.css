@@ -1,0 +1,41 @@
+/* Estilos interactivos adicionales */
+.drag-item {
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.drag-item:active {
+    cursor: grabbing;
+}
+
+.drop-zone {
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.drop-zone.drag-over {
+    background-color: rgba(239, 68, 68, 0.15);
+    border-color: #ef4444;
+}
+
+/* Print Styles para Exportación PDF limpia */
+@media print {
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+    header, footer, #btn-prev, #btn-next, #progress-bar, #btn-pdf {
+        display: none !important;
+    }
+    #app-container {
+        border: none !important;
+        box-shadow: none !important;
+        background-color: white !important;
+        color: black !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    .page-break {
+        page-break-after: always;
+    }
+}
